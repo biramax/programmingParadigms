@@ -32,8 +32,9 @@ def sort_list_declarative(numbers):
 
     # или
 
-    # numbers.sort(reverse=True)
-    # return numbers
+    # numbers_copy = numbers.copy()  # чтобы не менять значение списка за пределами функции
+    # numbers_copy.sort(reverse=True)
+    # return numbers_copy
 
 sorted_numbers = sort_list_declarative(numbers)
 print("Отсортированный список:", sorted_numbers)
