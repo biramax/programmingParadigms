@@ -11,6 +11,9 @@ class Table:
             [-1] * 3,
             [-1] * 3
         ]
+        num_rows = len(self.cells)
+        num_cols = len(self.cells[0])
+        self.len = num_rows * num_cols
 
     def cell_is_available(self, indexes):
         """

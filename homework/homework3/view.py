@@ -24,11 +24,11 @@ class View(ViewInterface):
                 self.presenter.save_user(user_name)
 
         print()
-        print("-------")
+        print("-----------")
         print("ВНИМАНИЕ!")
         print("Координаты ноликов или крестиков нужно вводить в формате row:col, где row - номер строки, col - номер столбца.")
         print("Например, для второй ячейки в первом ряду нужно ввести 1:2.")
-        print("-------")
+        print("-----------")
         print()
 
     def show_next_iteration(self, user) -> None:
@@ -46,8 +46,9 @@ class View(ViewInterface):
         Выводим в консоль таблицу с крестиками и ноликами
         """
         print()
-        print("-------")
+        print("-----------")
         for row in table:
+            print("| ", end="")
             for k, v in enumerate(row):
                 if k != 0:
                     print("  ", end="")
@@ -57,8 +58,8 @@ class View(ViewInterface):
                     print("0", end="")
                 else:
                     print("X", end="")
-            print()
-        print("-------")
+            print(" |")
+        print("-----------")
         print()
 
     def show_error(self, message) -> None:
@@ -72,12 +73,14 @@ class View(ViewInterface):
         """
         Выводим сообщение об окончании игры ничьёй
         """
-        print()
+        print("-----------")
         print("Игра окончена ничьёй!")
+        print("-----------")
 
     def show_win(self, user) -> None:
         """
         Выводим сообщение о победе
         """
-        print()
+        print("-----------")
         print(user.name + ", вы выиграли!!!")
+        print("-----------")

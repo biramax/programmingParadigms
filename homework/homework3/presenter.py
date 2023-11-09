@@ -45,7 +45,7 @@ class Presenter:
             self.view.show_table(self.model.get_table())
             if self.model.check_if_win():
                 self.view.show_win(user)
-            elif self.steps_counter == len(self.model.get_table()):
+            elif self.steps_counter == self.model.get_table_len():
                 self.view.show_game_over()
             else:
                 self.view.show_next_iteration(self.model.get_active_user())

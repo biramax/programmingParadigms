@@ -90,6 +90,12 @@ class Model:
         """
         return self.table.cells
 
+    def get_table_len(self) -> int:
+        """
+        Возвращает число ячеек таблицы (с расчётом на расширение, что их может быть больше 9)
+        """
+        return self.table.len
+
     def check_if_win(self) -> bool:
         """
         Проверяем, есть ли три нолика или три крестика подряд
