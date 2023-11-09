@@ -1,4 +1,4 @@
-class Board:
+class Table:
     """
     Доска для игры в крестики-нолики.
 
@@ -6,13 +6,20 @@ class Board:
     При заполнении ноликом значение соотв. ячейки массива устанавливается 0, крестиком - устанавливается 1.
     """
     def __init__(self):
-        self.board = [
+        self.cells = [
             [-1] * 3,
             [-1] * 3,
             [-1] * 3
         ]
 
-    def saveStep(self, row, col, value):
-        if self.board[row - 1][col - 1] != -1:
-            return False
-        self.board[row - 1][col - 1]
+    def cell_is_available(self, indexes):
+        """
+        Проверка на незанятость ячейки в таблице
+        """
+        return self.cells[indexes["x"]][indexes["y"]] == -1
+
+    def write_to_cell(self, indexes, value):
+        """
+        Записываем значение в таблицу
+        """
+        self.cells[indexes["x"]][indexes["y"]] = value
